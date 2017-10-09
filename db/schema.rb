@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171006074542) do
+ActiveRecord::Schema.define(version: 20171007111416) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -29,22 +29,11 @@ ActiveRecord::Schema.define(version: 20171006074542) do
     t.index ["product_id"], name: "index_order_details_on_product_id"
   end
 
-  create_table "orderdetails", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "quanlity"
-    t.integer "price"
-    t.bigint "order_id"
-    t.bigint "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_orderdetails_on_order_id"
-    t.index ["product_id"], name: "index_orderdetails_on_product_id"
-  end
-
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "status"
     t.integer "phone"
     t.string "address"
-    t.float "totalamount", limit: 24
+    t.float "total_amount", limit: 24
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -87,12 +76,12 @@ ActiveRecord::Schema.define(version: 20171006074542) do
     t.text "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.string "remember_digest"
   end
 
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
-  add_foreign_key "orderdetails", "orders"
-  add_foreign_key "orderdetails", "products"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "categories"
   add_foreign_key "ratings", "products"
