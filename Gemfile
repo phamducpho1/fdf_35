@@ -10,6 +10,7 @@ gem "carrierwave", "1.1.0"
 gem "mini_magick", "4.7.0"
 gem "fog", "1.40.0"
 gem "config"
+gem "pry-byebug"
 gem "will_paginate", "3.1.5"
 gem "bootstrap-will_paginate", "1.0.0"
 gem "config"
@@ -25,7 +26,6 @@ gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 group :development, :test do
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
 end

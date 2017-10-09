@@ -749,12 +749,7 @@ strong {
 color:#000
 }
 
-input[type="text"],input[type="email"],input[type="url"],textarea {
-width:100%;
-border:1px solid #e1e1e1;
-height:37px;
-padding:0 12px
-}
+
 
 textarea {
 height:260px;
@@ -763,10 +758,6 @@ padding:12px
 
 .form-block {
 margin-bottom:10px
-}
-
-input[type="checkbox"] {
-display:none
 }
 
 input[type="checkbox"]+label {
