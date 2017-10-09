@@ -20,5 +20,6 @@ micropost:
     max_length: 140
 picture:
   accpect: "image/jpeg,image/gif,image/png"
-
+size:
+  img: 250
 
