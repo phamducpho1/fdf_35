@@ -31,6 +31,8 @@
 
 en:
   title: "Food and Drink"
+  static_pages_controller:
+    errors: "Categories does not exit"
   users_controller:
     signup: "Signup susscess"
     errorss: "User does not exit"
