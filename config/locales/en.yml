@@ -30,14 +30,51 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  title: "Food and Drink"
+  users_controller:
+    signup: "Signup susscess"
+    errorss: "User does not exit"
+    create: "create user error"
+    sign_up: "login error"
   hello: "Hello world"
+  shared:
+    _error_messages:
+      eror: "The form contains "
+  sessions:
+    new:
+      login: "Log in"
+      newuser: "New user?"
+      singupnow: "Sign up now!"
+      remember: "Remember me on this computer"
   layouts:
+    _header:
+      App: "Food and drink"
+      home: "Home"
+      help: "Help"
+      log: "Log in"
+      users: "Users"
+      account: "Account"
+      logout: "Logout"
+      profile: "Profile"
+      setting: "Settings"
     application:
       title: "Project"
+    _footer:
+      copy: " Copy Right By Food and Drink @2015"
   static_pages:
     home:
-      head: "StaticPages#home"
-      content: "Find me in app/views/static_pages/home.html.erb"
+      welcome: "Welcome to the Food and Drink"
+      for: "This is the home page for the "
+      ahert: "Ruby on Rails Tutorial"
+      micropost: "Micropost Feed"
+      application: "sample application."
+      sign: "Sign up now!"
     help:
+      title: "Help"
       head: "StaticPages#help"
       content: "Find me in app/views/static_pages/help.html.erb"
+  users:
+    new:
+      title: "Sign up"
+      create: "Create my account"
+      confirm: "Confirmation"
