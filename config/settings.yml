@@ -13,6 +13,10 @@ gravatar:
   size_option: 20
 per_page:
   config: 4
+new_product:
+  config: 5
+related_product:
+  config: 3
 image:
   size: 5
 micropost:
@@ -22,4 +26,4 @@ picture:
   accpect: "image/jpeg,image/gif,image/png"
 size:
   img: 250
-
+  img_product: 200

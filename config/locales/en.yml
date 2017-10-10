@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  dollar: "$"
   title: "Food and Drink"
   static_pages_controller:
     errors: "Categories does not exit"
@@ -83,3 +84,14 @@ en:
       title: "Sign up"
       create: "Create my account"
       confirm: "Confirmation"
+  product:
+    show:
+      name: "Product name: "
+      price: "Price :   "
+      quanlity: " Quanlity : "
+      addtocart: "Add To Cart"
+      description: "Description"
+      review: "No review"
+      related: "Related Products "
+      sale: "Sale "
+      newproduct: "NEW PRODUCTS"

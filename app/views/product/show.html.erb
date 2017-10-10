@@ -1,0 +1,99 @@
+  <div class="container">
+    <div id="content">
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-4">
+              <%= image_tag(@products.image, size:Settings.size.img) %>
+            </div>
+            <div class="col-sm-8">
+              <div class="single-item-body">
+                <p class="single-item-title">
+                  <%= t"product.show.name" %><%= @products.name %>
+                </p>
+                <p class="single-item-price">
+                  <span><%= t"product.show.price" %><%= @products.price %><%=t"dollar"%></span>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+              <div class="space20">&nbsp;</div>
+              <div class="single-item-desc">
+                <p><%= t"product.show.quanlity" %><%= @products.quanlity %></p>
+              </div>
+              <div class="space20">&nbsp;</div>
+              <p><%= t"product.show.addtocart" %></p>
+              <div class="single-item-options">
+                <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div class="space40">&nbsp;</div>
+          <div class="woocommerce-tabs">
+            <ul class="tabs">
+              <li><a href="#tab-description"><%= t"product.show.description" %></a></li>
+            </ul>
+            <div class="panel" id="tab-description">
+              <p><%= @products.information %></p>
+            </div>
+            <div class="panel" id="tab-reviews">
+              <p><%= t"product.show.review" %></p>
+            </div>
+          </div>
+          <div class="space50">&nbsp;</div>
+          <div class="beta-products-list">
+            <h4><%= t"product.show.related" %></h4>
+            <div class="row">
+             <% @related_products.each do |product| %>
+                <div class="col-sm-4">
+                  <div class="single-item">
+                    <div class="ribbon-wrapper">
+                      <div class="ribbon sale"><%= t"product.show.sale" %></div>
+                    </div>
+                    <div class="single-item-header">
+                      <%= image_tag(product.image, size:Settings.size.img_product) %>
+                    </div>
+                    <div class="single-item-body">
+                      <p class="single-item-title"><%= product.name %></p>
+                      <p class="single-item-price">
+                        <span class="flash-del"><%=t"dollar"%><%= product.price %></span>
+                        <span class="flash-sale"><%=t"dollar"%><%= product.price %></span>
+                      </p>
+                    </div>
+                    <div class="single-item-caption">
+                      <%= link_to(product, class: "beta-btn primary") do %>
+                        <%=t"static_pages.home.details"%>
+                        <i class="fa fa-chevron-right"></i>
+                      <% end %>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 aside">
+          <div class="widget">
+            <h3 class="widget-title"><%=t"static_pages.home.newproduct"%></h3>
+            <div class="widget-body">
+              <div class="beta-sales beta-lists">
+                <% @new_products.each do |newproduct| %>
+                  <div class="media beta-sales-item">
+                    <%= link_to(newproduct, class: "pull-left") do %>
+                      <%= image_tag(newproduct.image) %>
+                    <%end%>
+                    <div class="media-body">
+                      <h6><%= newproduct.name %></h6>
+                      <span class="beta-sales-price"><%=t"dollar"%><%= newproduct.price %></span>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
