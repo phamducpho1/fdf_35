@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get "/sanpham", to: "static_pages#show"
   resources :users
   resources :static_pages
+  resources :product, only: [:show]
 end
