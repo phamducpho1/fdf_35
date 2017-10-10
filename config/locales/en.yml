@@ -32,8 +32,6 @@
 en:
   dollar: "$"
   title: "Food and Drink"
-  static_pages_controller:
-    errors: "Categories does not exit"
   users_controller:
     signup: "Signup susscess"
     errorss: "User does not exit"
@@ -84,6 +82,10 @@ en:
       title: "Sign up"
       create: "Create my account"
       confirm: "Confirmation"
+    index:
+      title: "User"
+      delete: "Delete"
+      sure: "You sure ?"
   product:
     show:
       name: "Product name: "
@@ -95,3 +97,4 @@ en:
       related: "Related Products "
       sale: "Sale "
       newproduct: "NEW PRODUCTS"
+
