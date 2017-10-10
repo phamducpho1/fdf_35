@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
-  def home
+
+  def index
     @categories = Category.sort_by_category
     @products = Product.sort_by_product.paginate(page: params[:page], per_page: Settings.per_page.config)
   end

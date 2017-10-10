@@ -1,16 +1,8 @@
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
   before_action :admin_user, only: :destroy
+  before_action :load_user, only: :show
 
-  def load_user
-    @user = User.find_by id: params[:id]
-    return if @user
-    flash[:warning] = t "users_controller.errorss"
-    redirect_to users_path
-  end
-
-  def show
-    load_user
-  end
+  def show; end
 
   def index
     @users = User.paginate(page: params[:page])
@@ -35,16 +27,14 @@ class UsersController < ApplicationController
       :password_confirmation)
   end
 
-  def destroy
-    if User.find_by(id: params[:id]).destroy
-      flash[:success] = "User was deleted"
-      redirect_to users_url
-    else
-      render "users/show"
-    end
-  end
-
   private
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+    flash[:warning] = t "users_controller.errorss"
+    redirect_to users_path
+  end
 
   def admin_user
     redirect_to root_url unless current_user.admin?
