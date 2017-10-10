@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  dollar: "$"
   title: "Food and Drink"
   users_controller:
     signup: "Signup susscess"
@@ -85,3 +86,15 @@ en:
       title: "User"
       delete: "Delete"
       sure: "You sure ?"
+  product:
+    show:
+      name: "Product name: "
+      price: "Price :   "
+      quanlity: " Quanlity : "
+      addtocart: "Add To Cart"
+      description: "Description"
+      review: "No review"
+      related: "Related Products "
+      sale: "Sale "
+      newproduct: "NEW PRODUCTS"
+

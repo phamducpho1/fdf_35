@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   get "category", to: "admin#category"
   resources :users
   resources :admin
+  resources :static_pages
+  resources :product, only: [:show]
 end
