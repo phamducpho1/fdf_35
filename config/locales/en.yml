@@ -43,7 +43,7 @@ en:
     errorss: "User does not exit"
     create: "create user error"
     sign_up: "login error"
-  hello: "Hello world"
+  hello: "Hello World"
   shared:
     _error_messages:
       eror: "The form contains "
@@ -113,6 +113,10 @@ en:
       create: "Created_at"
       update: "Updated_at"
       delete: "Delete"
+      product: "Product"
+      search: "Search"
   carts:
     show:
       cart: "Your cart"
+      image: "Image"
+      category: "Category"

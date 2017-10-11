@@ -1,5 +1,5 @@
-class Admin < ApplicationController
-  class UsersController
+class Admin
+  class UsersController < ApplicationController
     before_action :admin_user, only: :destroy
     before_action :load_user, only: :show
 
