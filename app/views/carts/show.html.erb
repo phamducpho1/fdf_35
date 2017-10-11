@@ -1,0 +1,5 @@
+<h2><%= t"carts.show.cart" %></h2>
+  <% @cart.line_items.each do |cart| %>
+    <%= cart.quantity %> <%= cart.product.name %>
+    </br>
+  <% end %>

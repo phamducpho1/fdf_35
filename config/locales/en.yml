@@ -32,6 +32,12 @@
 en:
   dollar: "$"
   title: "Food and Drink"
+  static_pages_controller:
+    errors: "Categories does not exit"
+    success: "Line item was successfully created"
+    error_item: "line item does not exit"
+    error_product: "Product does not exit"
+    eror_cart: "Carts does not exits"
   users_controller:
     signup: "Signup susscess"
     errorss: "User does not exit"
@@ -107,5 +113,6 @@ en:
       create: "Created_at"
       update: "Updated_at"
       delete: "Delete"
-
-
+  carts:
+    show:
+      cart: "Your cart"
