@@ -1,19 +1,22 @@
 Rails.application.routes.draw do
   get "sessions/new"
-  root "static_pages#home"
-  root 'users#index'
-  get  "/help", to: "static_pages#help"
-  get  "/about", to: "static_pages#about"
-  get  "/contact", to: "static_pages#contact"
-  get  "/signup", to: "users#new"
+  root "static_pages#index"
+  get "/help", to: "static_pages#help"
+  get "/about", to: "static_pages#about"
+  get "/contact", to: "static_pages#contact"
+  get "/signup", to: "users#new"
   post "/signup", to: "users#create"
-  get    "/login", to: "sessions#new"
-  post   "/login", to: "sessions#create"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  get "product" , to: "admin#product"
-  get "category", to: "admin#category"
+  get "user", to: "users#index"
+  get "product" , to: "product#index"
+  get "category", to: "category#index"
+  namespace :admin do
+    resources :users
+    resources :category
+  end
   resources :users
-  resources :admin
   resources :static_pages
   resources :product, only: [:show]
 end

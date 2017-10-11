@@ -1,0 +1,17 @@
+<% provide(:title, t("users.index.titlecategory")) %>
+<h1><%= t "users.index.titlecategory" %></h1>
+<div class="table-responsive">
+<table class="table">
+    <thead>
+      <tr>
+        <th><%= t "admin.id" %></th>
+        <th><%= t "admin.name" %></th>
+        <th><%= t "admin.create" %></th>
+        <th><%= t "admin.update" %></th>
+      </tr>
+    </thead>
+    <tbody>
+        <%= render partial: "category", collection: @categories %>
+    </tbody>
+</table>
+</div>
