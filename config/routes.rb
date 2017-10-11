@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts
   get "sessions/new"
   root "static_pages#index"
   get "/help", to: "static_pages#help"
@@ -10,7 +12,6 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "user", to: "users#index"
-  get "product" , to: "product#index"
   get "category", to: "category#index"
   namespace :admin do
     resources :users
@@ -19,4 +20,7 @@ Rails.application.routes.draw do
   resources :users
   resources :static_pages
   resources :product, only: [:show]
+  resources :line_items
+  resources :carts
+
 end

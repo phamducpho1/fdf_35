@@ -21,9 +21,11 @@
                 <p><%= t"product.show.quanlity" %><%= @products.quanlity %></p>
               </div>
               <div class="space20">&nbsp;</div>
-              <p><%= t"product.show.addtocart" %></p>
+              <p><%= t "product.show.addtocart" %></p>
               <div class="single-item-options">
-                <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                <%= link_to line_items_path(product_id: @products.id), method: :post, class: "add-to-cart pull-left" do %>
+                  <i class="fa fa-shopping-cart"></i>
+                <% end %>
                 <div class="clearfix"></div>
               </div>
             </div>
