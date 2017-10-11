@@ -26,5 +26,6 @@ micropost:
 picture:
   accpect: "image/jpeg,image/gif,image/png"
 size:
+  cart: 100
   img: 250
   img_product: 200
