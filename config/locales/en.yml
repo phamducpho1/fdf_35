@@ -38,6 +38,8 @@ en:
     error_item: "line item does not exit"
     error_product: "Product does not exit"
     eror_cart: "Carts does not exits"
+    eror_nilcart: "Delete Cart successfully"
+    item_path: "Delete item successfully"
   users_controller:
     signup: "Signup susscess"
     errorss: "User does not exit"
@@ -67,6 +69,7 @@ en:
       category: "Category"
       product: "Product"
       order: "Order"
+      cart: "Cart"
     application:
       title: "Project"
     _footer:
@@ -120,3 +123,15 @@ en:
       cart: "Your cart"
       image: "Image"
       category: "Category"
+      name: "Product name"
+      quanlity: "Quanlity"
+      price: "Price"
+      sum: "Sum money"
+      action: "Action"
+      delete_cart: "Delete carts"
+      eror: "Are you sure?"
+      cart_total: "Cart Totals"
+      sub_total: "Cart Subtotal:"
+      ship: "Shipping:"
+      free: "Free Shipping"
+
