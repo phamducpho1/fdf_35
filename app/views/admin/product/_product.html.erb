@@ -1,0 +1,8 @@
+<tr>
+  <td><%= product.id %></td>
+  <td><%= product.name %></td>
+  <td><%= image_tag(product.image, size: Settings.image.admin) %></td>
+  <td><%= product.category.name %></td>
+  <td><%= product.created_at %></td>
+  <td><%= product.updated_at %></td>
+</tr>

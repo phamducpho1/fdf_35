@@ -1,5 +1,5 @@
-class Admin < ApplicationController
-  class CategoryController
+class Admin
+  class CategoryController < ApplicationController
     before_action :admin_user, only: :destroy
     before_action :load_category, only: :show
 

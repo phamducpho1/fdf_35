@@ -16,11 +16,11 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :category
+    resources :product
   end
   resources :users
   resources :static_pages
   resources :product, only: [:show]
   resources :line_items
   resources :carts
-
 end
