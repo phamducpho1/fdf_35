@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :admin_user, only: :destroy
-  before_action :load_user, only: :show
+  before_action :load_user, only: %i(show destroy)
 
   def show; end
 
@@ -19,6 +19,16 @@ class Admin::UsersController < ApplicationController
       redirect_to root_url
     else
       render :new
+    end
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t "admin.deleted"
+      redirect_to admin_users_path
+    else
+      flash[:warning] = t "admin.notdelete"
+      redirect_to admin_users_path
     end
   end
 

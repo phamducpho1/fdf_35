@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   def message_account user
     log_in user
     remember_params user
-    redirect_back_or user
+    redirect_to root_url
   end
 
   def create

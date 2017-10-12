@@ -3,6 +3,14 @@
   <td><%= user.name %></td>
   <td><%= user.created_at %></td>
   <td><%= user.updated_at %></td>
+  <td>
+  <% if current_user.admin? && !current_user?(user) %>
+      <%= link_to admin_user_path(user), method: :delete,
+        class: "add-to-cart pull-left", data: {confirm: (t "users.index.sure") } do %>
+        <i class="fa fa-trash-o" aria-hidden="true" ></i>
+      <% end %>
+  <% end %>
+  </td>
 </tr>
 
 
