@@ -25,11 +25,10 @@ class Admin::UsersController < ApplicationController
   def destroy
     if @user.destroy
       flash[:success] = t "admin.deleted"
-      redirect_to admin_users_path
     else
       flash[:warning] = t "admin.notdelete"
-      redirect_to admin_users_path
     end
+    redirect_to admin_users_path
   end
 
   def user_params

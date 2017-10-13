@@ -15,11 +15,10 @@ class Admin::CategoryController < ApplicationController
   def destroy
     if @category.destroy
       flash[:success] = t "admin.deleted"
-      redirect_to admin_category_index_path
     else
       flash[:warning] = t "admin.notdelete"
-      redirect_to admin_category_index_path
     end
+    redirect_to admin_category_index_path
   end
 
   private

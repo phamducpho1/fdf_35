@@ -32,6 +32,8 @@
 en:
   dollar: "$"
   title: "Food and Drink"
+  add: "+"
+  remove: "-"
   static_pages_controller:
     errors: "Categories does not exit"
     success: "Line item was successfully created"
@@ -40,6 +42,7 @@ en:
     eror_cart: "Carts does not exits"
     eror_nilcart: "Delete Cart successfully"
     item_path: "Delete item successfully"
+    succsess: "insert product successfully"
   users_controller:
     signup: "Signup susscess"
     errorss: "User does not exit"
@@ -70,6 +73,7 @@ en:
       product: "Product"
       order: "Order"
       cart: "Cart"
+      item: "- item"
     application:
       title: "Project"
     _footer:
@@ -135,4 +139,5 @@ en:
       sub_total: "Cart Subtotal:"
       ship: "Shipping:"
       free: "Free Shipping"
+      continue: "Continue Shopping"
 

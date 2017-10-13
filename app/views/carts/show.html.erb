@@ -1,6 +1,7 @@
-<h2><%= t"carts.show.cart" %></h2>
+  <h2><%= t"carts.show.cart" %></h2>
 <div class="row">
-  <%= link_to t("carts.show.delete_cart"), @cart, method: :delete, data: {confirm: t("carts.show.eror")} %>
+  <%= link_to t("carts.show.delete_cart"), @cart, method: :delete,
+  data: {confirm: t("carts.show.eror")} , class: "btn btn-info" %>
 </div>
 <div class="table-responsive cart_info">
   <table class="table table-condensed">
@@ -18,6 +19,7 @@
       <%= render partial: "cart", collection: @cart.line_items %>
     </tbody>
   </table>
+</div>
 <div class="cart-totals pull-right">
   <div class="cart-totals-row">
     <h5 class="cart-total-title"><%= t"carts.show.cart_total" %>
@@ -40,4 +42,9 @@
     </span>
   </div>
 </div>
+<div class="row">
+    <%= link_to root_path, class: "btn btn-warning" do %>
+      <%= t "carts.show.continue" %>
+      <i class="fa fa-angle-left" aria-hidden="true" ></i>
+    <% end %>
 </div>
