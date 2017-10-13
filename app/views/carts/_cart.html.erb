@@ -6,7 +6,11 @@
     <p><%= cart.product.name %></p>
   </td>
   <td class="cart_quantity">
+    <%= link_to t("add"), items_path(product_id: cart.product.id),
+    class:"btn btn-success",method: :post ,remote:true %>
     <%= cart.quantity %>
+    <%= link_to t("remove"), line_item_path(product_id: cart.product.id),
+    class:"btn btn-success", method: :put ,remote:true %>
   </td>
   <td class="cart_total">
     <p class="cart_total_price"><%= cart.product.price %></p>
@@ -15,11 +19,8 @@
     <p class="cart_total_price"><%= cart.quantity * cart.product.price %></p>
   </td>
   <td>
-    <%= link_to deleteitem_path(id: cart.id), method: :delete, class: "add-to-cart pull-left" do %>
+    <%= link_to deleteitem_path(id: cart.id), method: :delete, remote:true, class: "add-to-cart pull-left" do %>
       <i class="fa fa-trash-o" aria-hidden="true" ></i>
     <% end %>
-  </td>
-  <td>
-    <i class="fa fa-refresh" aria-hidden="true"></i>
   </td>
 </tr>

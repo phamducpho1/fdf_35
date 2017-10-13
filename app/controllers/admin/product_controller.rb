@@ -17,11 +17,10 @@ class Admin::ProductController < ApplicationController
   def destroy
     if @product.destroy
       flash[:success] = t "admin.deleted"
-      redirect_to admin_product_index_path
     else
       flash[:warning] = t "admin.notdelete"
-      redirect_to admin_product_index_path
     end
+    redirect_to admin_product_index_path
   end
 
   private

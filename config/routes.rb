@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   resources :product
   resources :line_items
   resources :carts
+  resources :items, only: [:create]
 end

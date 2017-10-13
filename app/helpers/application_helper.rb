@@ -7,4 +7,8 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def sum_quanlity
+    Cart.find_by(id: session[:cart_id]).line_items.sum(:quantity) if session[:cart_id]
+  end
 end
