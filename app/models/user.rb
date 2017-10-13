@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
-  has_many :suggests
-  has_many :orders
-  has_many :ratings
+  has_many :suggests, dependent: :destroy
+  has_many :orders, dependent: :destroy
+  has_many :ratings, dependent: :destroy
   validates :name, presence: true, length: {maximum: Settings.user.name.maximum_length}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: Settings.user.email.maximum_length},

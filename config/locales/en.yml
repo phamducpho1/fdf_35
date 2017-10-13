@@ -115,7 +115,8 @@ en:
       name: "Name"
       create: "Created_at"
       update: "Updated_at"
-      delete: "Delete"
+      deleted: "Delete is suscessful"
+      notdelete: "Delete is not successful"
       product: "Product"
       search: "Search"
   carts:

@@ -1,6 +1,6 @@
 class Admin::CategoryController < ApplicationController
   before_action :admin_user, only: :destroy
-  before_action :load_category, only: :show
+  before_action :load_category, only: %i(show destroy)
 
   def show; end
 
@@ -12,12 +12,26 @@ class Admin::CategoryController < ApplicationController
     @category = Category.new
   end
 
+  def destroy
+    if @category.destroy
+      flash[:success] = t "admin.deleted"
+      redirect_to admin_category_index_path
+    else
+      flash[:warning] = t "admin.notdelete"
+      redirect_to admin_category_index_path
+    end
+  end
+
   private
 
   def load_category
     @category = Category.find_by id: params[:id]
-    return if @categories
+    return if @category
     flash[:warning] = t "users_controller.errorss"
-    redirect_to users_path
+    redirect_to admin_category_index_path
+  end
+
+  def admin_user
+    redirect_to root_url unless current_user.admin?
   end
 end
