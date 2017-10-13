@@ -123,6 +123,17 @@ en:
       notdelete: "Delete is not successful"
       product: "Product"
       search: "Search"
+      price: "Price"
+      create: "Create is suscessful"
+      notcreate: "Create is not successful"
+      category:
+        title: "Create Category"
+        category: "Category"
+        placename: "Drink"
+      product:
+        title: "Create Product"
+        product: "Product"
+        create: "Create"
   carts:
     show:
       cart: "Your cart"

@@ -15,8 +15,8 @@
         <% end %>
         <% if logged_in?  %>
           <% if current_user.admin?  %>
-            <li><%= link_to t("layouts._header.category"), admin_category_index_path %></li>
-            <li><%= link_to t("layouts._header.product"), admin_product_index_path %></li>
+            <li><%= link_to t("layouts._header.category"), admin_categories_path %></li>
+            <li><%= link_to t("layouts._header.product"), admin_products_path %></li>
             <li><%= link_to t("layouts._header.users"), admin_users_path %></li>
             <li><%= link_to t("layouts._header.order"), "#"  %></li>
           <% end %>

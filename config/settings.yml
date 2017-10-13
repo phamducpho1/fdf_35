@@ -29,3 +29,7 @@ size:
   cart: 100
   img: 250
   img_product: 200
+product:
+  price: 1.0
+  quanlity: 1
+  information: 255

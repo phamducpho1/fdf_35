@@ -31,12 +31,12 @@ class Admin::UsersController < ApplicationController
     redirect_to admin_users_path
   end
 
+  private
+
   def user_params
     params.require(:user).permit(:name, :email, :address, :password,
       :password_confirmation)
   end
-
-  private
 
   def load_user
     @user = User.find_by id: params[:id]
