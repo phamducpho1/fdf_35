@@ -12,4 +12,11 @@ class ApplicationController < ActionController::Base
       Cart.find_by id: session[:cart_id]
     end
   end
+
+  def logged_in_user
+    return if logged_in?
+    store_location
+    flash[:danger] = t "ple_login"
+    redirect_to login_url
+  end
 end

@@ -49,4 +49,8 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end
+
+  def destroy_session id
+    Cart.destroy id
+  end
 end

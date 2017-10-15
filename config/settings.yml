@@ -33,3 +33,9 @@ product:
   price: 1.0
   quanlity: 1
   information: 255
+status:
+  default: 1
+oder:
+  minimum_length: 10
+  maxnimum_length: 11
+

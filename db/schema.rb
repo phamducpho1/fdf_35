@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20171010042324) do
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "status"
-    t.integer "phone"
+    t.string "phone"
     t.string "address"
     t.float "total_amount", limit: 24
     t.bigint "user_id"
