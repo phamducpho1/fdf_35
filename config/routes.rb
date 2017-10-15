@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   delete "/deleteitem", to: "line_items#destroy"
   namespace :admin do
     resources :users
-    resources :category
-    resources :product
+    resources :categories
+    resources :products
   end
   resources :users
   resources :static_pages

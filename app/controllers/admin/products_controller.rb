@@ -1,4 +1,4 @@
-class Admin::ProductController < ApplicationController
+class Admin::ProductsController < ApplicationController
   before_action :admin_user, only: :destroy
   before_action :load_product, only: %i(show destroy)
 
@@ -12,6 +12,17 @@ class Admin::ProductController < ApplicationController
 
   def new
     @product = Product.new
+    @cate = Category.sort_by_category
+  end
+
+  def create
+    @product = Product.new product_params
+    if @product.save
+      flash[:success] = t "admin.create"
+      redirect_to admin_products_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -20,16 +31,20 @@ class Admin::ProductController < ApplicationController
     else
       flash[:warning] = t "admin.notdelete"
     end
-    redirect_to admin_product_index_path
+    redirect_to admin_products_path
   end
 
   private
+
+  def product_params
+    params.require(:product).permit(:name, :price, :quanlity, :image, :information, :category_id)
+  end
 
   def load_product
     @product = Product.find_by id: params[:id]
     return if @product
     flash[:warning] = t "users_controller.errorss"
-    redirect_to admin_product_index_path
+    redirect_to admin_products_path
   end
 
   def admin_user

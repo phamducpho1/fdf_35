@@ -6,8 +6,7 @@
   <td>
   <% if current_user.admin? && !current_user?(user) %>
       <%= link_to admin_user_path(user), method: :delete,
-        class: "add-to-cart pull-left", data: {confirm: (t "users.index.sure") } do %>
-        <i class="fa fa-trash-o" aria-hidden="true" ></i>
+        class: "fa fa-trash-o btn btn-danger", data: {confirm: (t "users.index.sure") } do %>
       <% end %>
   <% end %>
   </td>
