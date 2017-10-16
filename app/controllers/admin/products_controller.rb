@@ -1,6 +1,6 @@
 class Admin::ProductsController < ApplicationController
   before_action :admin_user, only: :destroy
-  before_action :load_product, only: %i(show destroy)
+  before_action :load_product, only: %i(destroy edit update)
 
   def show; end
 
@@ -23,6 +23,19 @@ class Admin::ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @cate = Category.sort_by_category
+  end
+
+  def update
+    if @product.update_attributes(product_params)
+      flash[:success] = t "admin.updatesuc"
+    else
+      flash[:warning] = t "admin.updatefail"
+    end
+    redirect_to admin_products_path
   end
 
   def destroy

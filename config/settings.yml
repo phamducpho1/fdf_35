@@ -35,7 +35,4 @@ product:
   information: 255
 status:
   default: 1
-oder:
-  minimum_length: 10
-  maxnimum_length: 11
-
+order: 1
