@@ -1,4 +1,4 @@
-  <h2><%= t"carts.show.cart" %></h2>
+<h2><%= t"carts.show.cart" %></h2>
 <div class="row">
   <%= link_to t("carts.show.delete_cart"), @cart, method: :delete,
   data: {confirm: t("carts.show.eror")} , class: "btn btn-info" %>
@@ -45,6 +45,10 @@
 <div class="row">
     <%= link_to root_path, class: "btn btn-warning" do %>
       <%= t "carts.show.continue" %>
+      <i class="fa fa-angle-left" aria-hidden="true" ></i>
+    <% end %>
+    <%= link_to new_order_path, class: "btn btn-warning" do %>
+      <%= t "carts.show.order" %>
       <i class="fa fa-angle-left" aria-hidden="true" ></i>
     <% end %>
 </div>

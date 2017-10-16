@@ -34,6 +34,10 @@ en:
   title: "Food and Drink"
   add: "+"
   remove: "-"
+  ple_login: "Please login "
+  orders_controller:
+    create: "Create order success!"
+    errror: "errror create order"
   static_pages_controller:
     errors: "Categories does not exit"
     success: "Line item was successfully created"
@@ -151,4 +155,9 @@ en:
       ship: "Shipping:"
       free: "Free Shipping"
       continue: "Continue Shopping"
-
+      order: "Order"
+  orders:
+    new:
+      title: "ORDER INFORMATION"
+      order: " Order"
+      back: "Back order"
