@@ -1,7 +1,8 @@
 class StaticPagesController < ApplicationController
   def index
+    @products = Product.search_by_name(params[:search]).sort_by_product
+      .paginate(page: params[:page], per_page: Settings.per_page.config)
     @categories = Category.sort_by_category
-    @products = Product.sort_by_product.paginate(page: params[:page], per_page: Settings.per_page.config)
   end
 
   def show

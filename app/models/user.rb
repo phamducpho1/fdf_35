@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: Settings.user.password.minimum_length},
     allow_nil: true
   scope :sort_by_name, ->{order :name}
+  scope :send_mail, ->{where(admin: Settings.admin.value)}
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost

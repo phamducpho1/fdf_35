@@ -36,3 +36,8 @@ product:
 status:
   default: 1
 order: 1
+oder:
+  minimum_length: 10
+  maxnimum_length: 11
+admin:
+  value: 1

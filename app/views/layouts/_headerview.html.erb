@@ -1,0 +1,25 @@
+<%= form_tag(static_pages_path, method: :get, class: "navbar-form") do %>
+  <div class="input-group">
+    <%= text_field_tag "search" , nil, class: "form-control src" %>
+    <div class="input-group-btn">
+      <%= submit_tag t("layouts._header.search"), class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>
+<div class="left-sidebar">
+  <h5><%= t "static_pages.home.product" %></h5>
+  <div class="panel-group category-products" id="accordian">
+    <div class="panel panel-default">
+      <% @categories.each do |cate| %>
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <i class="fa fa-star">
+              <%= link_to cate.name, controller: "static_pages",
+                action: "show", id: cate.id %>
+            </i>
+          </h4>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

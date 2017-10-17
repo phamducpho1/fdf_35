@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
   def create
     @oder = Order.new order_params
     if @oder.save
-      @item = current_cart.line_items
+      UserMailer.mailer_order(@oder).deliver_now
       create_order
       destroy_session session[:cart_id]
       session[:cart_id] = nil
@@ -28,6 +28,7 @@ class OrdersController < ApplicationController
   private
 
   def create_order
+    @item = current_cart.line_items
     ActiveRecord::Base.transaction do
       @item.each do |cate|
         OrderDetail.create!(order_id: @oder.id, product_id: cate.product_id, quanlity: cate.quantity)
