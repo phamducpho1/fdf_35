@@ -35,6 +35,7 @@ en:
   add: "+"
   remove: "-"
   ple_login: "Please login "
+  mail_oder: "List order"
   orders_controller:
     create: "Create order success!"
     errror: "errror create order"
@@ -64,6 +65,7 @@ en:
       remember: "Remember me on this computer"
   layouts:
     _header:
+      search: "Search"
       App: "Food and drink"
       home: "Home"
       help: "Help"
@@ -192,3 +194,13 @@ en:
       title: "ORDER INFORMATION"
       order: " Order"
       back: "Back order"
+  user_mailer:
+    order: "Order hot"
+    content: "You've received a "
+    orders: "  order"
+    details : "Details "
+    id: "id"
+    name: "name"
+    address: "address"
+    phone: "phone"
+    order_to: "Go to order"

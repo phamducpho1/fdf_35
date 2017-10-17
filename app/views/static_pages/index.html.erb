@@ -4,23 +4,7 @@
       <div class="space20">&nbsp;</div>
       <div class="row">
         <div class="col-sm-3">
-          <div class="left-sidebar">
-            <h5><%= t "static_pages.home.product" %></h5>
-            <div class="panel-group category-products" id="accordian">
-              <div class="panel panel-default">
-                <% @categories.each do |cate| %>
-                  <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <i class="fa fa-star">
-                      <%= link_to cate.name, controller: "static_pages", action: "show", id: cate.id
-                      %>
-                    </i>
-                  </h4>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
+            <%= render "layouts/headerview" %>
         </div>
         <div class="col-sm-9">
           <div class="beta-products-list">

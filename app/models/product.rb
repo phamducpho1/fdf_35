@@ -12,4 +12,5 @@ class Product < ApplicationRecord
   scope :sort_by_products, ->{order :name}
   scope :not_original, ->(id){where.not(id: id)}
   scope :find_category, ->(q){where category_id: q if q.present?}
+  scope :search_by_name, ->(content){where(" name like ?", "%#{content}%") if content.present?}
 end
