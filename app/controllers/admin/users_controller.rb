@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :admin_user, only: :destroy
-  before_action :load_user, only: %i(show destroy)
+  before_action :load_user, only: %i(destroy update edit)
 
   def show; end
 
@@ -20,6 +20,17 @@ class Admin::UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit; end
+
+  def update
+    if @user.update_attributes(user_params)
+      flash[:success] = t "admin.updatesuc"
+    else
+      flash[:warning] = t "admin.updatefail"
+    end
+    redirect_to admin_users_path
   end
 
   def destroy

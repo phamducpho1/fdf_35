@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   has_many :ratings, dependent: :destroy
   has_many :order_details, dependent: :destroy
   has_many :line_items, dependent: :destroy
+  mount_uploader :image, ImageUploader
   validates :name, presence: true, uniqueness: true
   validates :price, presence: true, numericality: {greater_than_or_equal_to: Settings.product.price}
   validates :quanlity, presence: true, numericality: {greater_than_or_equal_to: Settings.product.quanlity}

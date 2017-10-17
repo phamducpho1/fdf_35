@@ -10,5 +10,8 @@
   <%= link_to admin_product_path(product), method: :delete,
     class: "fa fa-trash-o btn btn-danger", data: {confirm: (t "users.index.sure") } do %>
   <% end %>
+  <%= link_to edit_admin_product_path(product),
+    class: "fa fa-pencil-square-o btn btn-danger" do %>
+  <% end %>
   </td>
 </tr>
