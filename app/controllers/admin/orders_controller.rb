@@ -34,11 +34,9 @@ class Admin::OrdersController < ApplicationController
   end
 
   def load_order
-
     @order = Order.find_by id: params[:id]
     return if @order
     flash[:warning] = t "users_controller.errorss"
     redirect_to admin_orders_path
   end
 end
-# @stas[1][1]

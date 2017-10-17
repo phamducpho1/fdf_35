@@ -1,20 +1,7 @@
 class UsersController < ApplicationController
-  before_action :admin_user, only: :destroy
+  before_action :load_user, only: %i(edit update show index)
 
-  def load_user
-    @user = User.find_by id: params[:id]
-    return if @user
-    flash[:warning] = t "users_controller.errorss"
-    redirect_to users_path
-  end
-
-  def show
-    load_user
-  end
-
-  def index
-    @users = User.paginate(page: params[:page])
-  end
+  def show; end
 
   def new
     @user = User.new
@@ -30,23 +17,28 @@ class UsersController < ApplicationController
     end
   end
 
-  def user_params
-    params.require(:user).permit(:name, :email, :address, :password,
-      :password_confirmation)
-  end
+  def edit; end
 
-  def destroy
-    if User.find_by(id: params[:id]).destroy
-      flash[:success] = "User was deleted"
-      redirect_to users_url
+  def updates
+    if @user.update_attributes(user_params)
+      flash[:success] = t "admin.deleted"
     else
-      render "users/show"
+      flash[:warning] = t "admin.notdelete"
     end
+    redirect_to user_path
   end
 
   private
 
-  def admin_user
-    redirect_to root_url unless current_user.admin?
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+    flash[:warning] = t "users_controller.errorss"
+    redirect_to root_url
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :phone, :address, :password,
+      :password_confirmation)
   end
 end

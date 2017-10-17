@@ -68,7 +68,7 @@ en:
       search: "Search"
       App: "Food and drink"
       home: "Home"
-      help: "Help"
+      suggest: "Suggest"
       log: "Log in"
       users: "Users"
       account: "Account"
@@ -171,6 +171,17 @@ en:
         pro_quan: "Product_quanlity"
         sum: "Sum"
         orderdetail: "Orderdetail"
+      suggest:
+        title: "Suggest"
+        content: "Content"
+        titleuser: "Please leave feedback so that we can serve better"
+        contact: "Contact with us"
+        topic: "Food and Drink"
+        locate: "Framgia Da Nang, VietNam"
+        by: "By: Minh and Pho"
+        mobile: "Mobile: +841212875412"
+        fax: "Fax: 1-714-252-0026"
+        mail: "Email: hoangminh11081996@gmail.com"
   carts:
     show:
       cart: "Your cart"
@@ -204,3 +215,17 @@ en:
     address: "address"
     phone: "phone"
     order_to: "Go to order"
+  suggest:
+    title: "Create Suggest"
+    submit: "Submit"
+    yourmess: "Your Message Here"
+  user:
+    edit:
+      title: "Update Profile"
+      update: "Update"
+    show:
+      name: "User Name: "
+      email: "Email: "
+      phone: "Phone: "
+      address: "Address: "
+
