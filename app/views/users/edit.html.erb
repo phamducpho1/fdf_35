@@ -1,9 +1,9 @@
-<% provide(:title, t("users.new.title")) %>
-<h1><%= t "users.new.title" %></h1>
+<% provide(:title, (t "user.edit.title")) %>
+<h1><%= t "user.edit.title" %></h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
+    <%= form_for @user do |f| %>
       <%= render "shared/error_messages" %>
 
       <%= f.label :name %>
@@ -24,7 +24,7 @@
       <%= f.label :password_confirmation, t("users.new.confirm") %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
 
-      <%= f.submit t("users.new.create"), class: "btn btn-primary" %>
+      <%= f.submit (t "user.edit.update"), class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

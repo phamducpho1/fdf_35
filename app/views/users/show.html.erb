@@ -1,14 +1,16 @@
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= @user.name %>
-        <br>
-        <%= @user.email %>
-        <br>
-        <%= @user.address %>
-      </h1>
-    </section>
-  </aside>
+<br><br>
+<div class="container-fluid well span6">
+  <div class="row-fluid">
+    <div class="span2" >
+      <%=  image_tag "user.jpg", class: "img-circle" %>
+    </div>
+    <div class="span8">
+      <h3><%= t "user.show.name" %><%= @user.name %></h3>
+      <h6><%= t "user.show.email" %><%= @user.email %></h6>
+      <h6><%= t "user.show.phone" %><%= @user.phone %></h6>
+      <h6><%= t "user.show.address" %><%= @user.address %></h6>
+      <%= link_to "", edit_user_path, class: "fa fa-pencil-square-o btn btn-info" %>
+    </div>
+  </div>
 </div>
 

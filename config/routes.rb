@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  get "user", to: "users#index"
   get "category", to: "category#index"
   delete "/deleteitem", to: "line_items#destroy"
   namespace :admin do
@@ -18,12 +17,14 @@ Rails.application.routes.draw do
     resources :products
     resources :orders
     resources :orderdetails
+    resources :suggests
   end
-  resources :users
+  resources :suggests
   resources :static_pages
   resources :product
   resources :line_items
   resources :carts
   resources :items, only: [:create]
   resources :orders
+  resources :users
 end
