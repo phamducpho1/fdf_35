@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:total_amount, :user_id, :phone, :address, :status)
+    params.require(:order).permit(:total_amount, :user_id, :phone, :address)
   end
 
   private

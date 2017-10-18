@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def index
-    @products = Product.search_by_name(params[:search]).sort_by_product
-      .paginate(page: params[:page], per_page: Settings.per_page.config)
+    @products = Product.search_by_name(params[:search]).search_price(load_params)
+      .sort_by_product.paginate(page: params[:page], per_page: Settings.per_page.config)
     @categories = Category.sort_by_category
   end
 
@@ -17,4 +17,14 @@ class StaticPagesController < ApplicationController
   end
 
   def help; end
+
+  private
+
+  def load_params
+    if params[:reson].present?
+      return if params[:reson][:price] == Settings.controllers.products.all
+      start, last = params[:reson][:price].split(Settings.controllers.products.to)
+      start..last
+    end
+  end
 end
