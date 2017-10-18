@@ -95,6 +95,8 @@ en:
       product: "Product Categories"
       find: "   PRODUCT"
       details: "Details"
+      search: "Product by price"
+      submit: "Search"
     help:
       title: "Help"
       head: "StaticPages#help"
