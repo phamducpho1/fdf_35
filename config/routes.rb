@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   resources :items, only: [:create]
   resources :orders
   resources :users
+  resources :ratings, only: [:create]
 end

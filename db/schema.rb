@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20171010042324) do
 
   create_table "order_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "quanlity"
-    t.integer "price"
     t.bigint "order_id"
     t.bigint "product_id"
     t.datetime "created_at", null: false
@@ -74,6 +73,7 @@ ActiveRecord::Schema.define(version: 20171010042324) do
 
   create_table "ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "vote"
+    t.text "comment"
     t.bigint "product_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 20171010042324) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "email"
+    t.string "phone"
     t.text "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

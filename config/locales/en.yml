@@ -36,6 +36,7 @@ en:
   remove: "-"
   ple_login: "Please login "
   mail_oder: "List order"
+  comment: "Comments"
   orders_controller:
     create: "Create order success!"
     errror: "errror create order"
@@ -122,6 +123,10 @@ en:
       related: "Related Products "
       sale: "Sale "
       newproduct: "NEW PRODUCTS"
+      review: "Review"
+      comment: "New comments"
+      rating: "Rating breakdown"
+      status: "Status: unavailabe"
   admin:
       id: "ID"
       name: "Name"
@@ -230,4 +235,6 @@ en:
       email: "Email: "
       phone: "Phone: "
       address: "Address: "
-
+  raiting:
+    not_ratings: "You voted for the product"
+    success_raiting: "Vote successful"
