@@ -32,10 +32,16 @@ class OrdersController < ApplicationController
     ActiveRecord::Base.transaction do
       @item.each do |cate|
         OrderDetail.create!(order_id: @oder.id, product_id: cate.product_id, quanlity: cate.quantity)
+        update_product cate
       end
     end
     flash[:success] = t "orders_controller.create"
   rescue
     flash[:error] = t "orders_controller.errror"
+  end
+
+  def update_product cate
+    @product = Product.find_by id: cate.product_id
+    @product.update_attributes! quanlity: (@product.quanlity - cate.quantity) if @product
   end
 end
