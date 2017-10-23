@@ -8,7 +8,12 @@ class Admin::OrdersController < ApplicationController
   def show; end
 
   def destroy
-    if @order.destroy
+    if @order.not_handle?
+      return_quanlity
+      @order.destroy
+      flash[:success] = t "admin.deleted"
+    elsif
+      @order.destroy
       flash[:success] = t "admin.deleted"
     else
       flash[:warning] = t "admin.notdelete"
@@ -38,5 +43,13 @@ class Admin::OrdersController < ApplicationController
     return if @order
     flash[:warning] = t "users_controller.errorss"
     redirect_to admin_orders_path
+  end
+
+  def return_quanlity
+    @order.order_details.each do |l|
+      product = Product.find_by(id: l.product_id)
+      @total = l.quanlity
+      product.increment!(:quanlity, @total)
+    end
   end
 end

@@ -7,9 +7,9 @@
   <%= t "admin.order.status" %>
     <span class="label label-warning" >
       <% if  order.status == Settings.order %>
-        <%= t "admin.order.nothandle" %>
-      <% else %>
         <%= t "admin.order.handled" %>
+      <% else %>
+        <%= t "admin.order.nothandle" %>
       <% end %>
     </span>
   </h6>

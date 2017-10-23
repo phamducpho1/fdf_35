@@ -11,10 +11,10 @@
       <%= render "shared/error_messages" , object: f.object %>
 
       <%= f.label :phone %>
-      <%= f.number_field :phone, class: "form-control" %>
+      <%= f.number_field :phone, value: current_user.phone, class: "form-control" %>
 
       <%= f.label :address %>
-      <%= f.text_field :address, class: "form-control" %>
+      <%= f.text_field :address, value: current_user.address, class: "form-control" %>
 
       <%= f.label :total_amount %>
       <%= f.number_field :total_amount, value: @total, readonly: true,
