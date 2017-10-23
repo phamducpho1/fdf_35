@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :orderdetails
     resources :suggests
+    resources :statistics, only: :index
   end
   resources :suggests
   resources :static_pages
@@ -28,4 +29,5 @@ Rails.application.routes.draw do
   resources :orders
   resources :users
   resources :ratings, only: [:create]
+  resources :histories
 end

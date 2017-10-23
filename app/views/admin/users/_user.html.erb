@@ -1,8 +1,10 @@
 <tr>
   <td><%= user.id %></td>
   <td><%= user.name %></td>
-  <td><%= user.created_at %></td>
-  <td><%= user.updated_at %></td>
+  <td><%= user.phone %></td>
+  <td><%= user.address %></td>
+  <td><%= user.created_at.to_date %></td>
+  <td><%= user.updated_at.to_date %></td>
   <td>
   <% if current_user.admin? && !current_user?(user) %>
       <%= link_to admin_user_path(user), method: :delete,

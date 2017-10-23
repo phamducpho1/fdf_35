@@ -8,6 +8,13 @@ class OrdersController < ApplicationController
     @user = session[:user_id]
   end
 
+  def show
+    @order = Order.find_order session[:user_id]
+    return if @order
+    flash[:error] = t "user.show.notfind"
+    redirect_to root_url
+  end
+
   def create
     @oder = Order.new order_params
     if @oder.save
