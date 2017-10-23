@@ -13,10 +13,10 @@ class SuggestsController < ApplicationController
     @suggest = current_user.suggests.new suggest_params
     if @suggest.save
       flash[:success] = t "admin.create"
+      redirect_to root_url
     else
-      flash[:warning] = t "admin.notcreate"
+      render :new
     end
-    redirect_to root_url
   end
 
   private

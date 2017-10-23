@@ -7,7 +7,7 @@
         <div class="form-group">
           <%= select_tag :q, options_from_collection_for_select(@categories, :id, :name) ,
             class: "form-control"%>
-          <%= submit_tag (t "admin.search") , class: "btn btn-success btn-sm"%>
+          <%= submit_tag (t "admin.search"), class: "btn btn-success btn-sm"%>
         </div>
       <% end %>
     </div>
@@ -24,7 +24,7 @@
         <th><%= t "admin.image" %></th>
         <th><%= t "admin.price" %></th>
         <th><%= t "admin.category.category" %></th>
-        <th><%= t "admin.create" %></th>
+        <th><%= t "admin.createat" %></th>
         <th><%= t "admin.update" %></th>
         <th></th>
       </tr>

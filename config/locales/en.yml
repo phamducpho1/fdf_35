@@ -66,6 +66,7 @@ en:
       remember: "Remember me on this computer"
   layouts:
     _header:
+      history: "History"
       search: "Search"
       App: "Food and drink"
       home: "Home"
@@ -130,7 +131,7 @@ en:
   admin:
       id: "ID"
       name: "Name"
-      create: "Created_at"
+      createat: "Created_at"
       update: "Updated_at"
       deleted: "Delete is suscessful"
       notdelete: "Delete is not successful"
@@ -156,6 +157,8 @@ en:
       user:
         titleupdate: "Update User"
         update: "Update"
+        phone: "Phone"
+        address: "Address"
       order:
         title: "Order"
         titleupdate: "Update Information"
@@ -165,7 +168,7 @@ en:
         person: "Person"
         phone: "Phone"
         address: "Address"
-        total: "Total_amount"
+        totala: "Total_amount"
         status: "Status"
         create: "Created_at"
         update: "Updated_at"
@@ -178,6 +181,7 @@ en:
         pro_quan: "Product_quanlity"
         sum: "Sum"
         orderdetail: "Orderdetail"
+        history: "History Order"
       suggest:
         title: "Suggest"
         content: "Content"
@@ -189,6 +193,16 @@ en:
         mobile: "Mobile: +841212875412"
         fax: "Fax: 1-714-252-0026"
         mail: "Email: hoangminh11081996@gmail.com"
+      statistic:
+        title: "Statistic"
+        byday: "Statistic by day"
+        bymonth: "Statistic by month"
+        byyear: "Statistic by year"
+        date: "Date"
+        month: "Month"
+        year: "Year"
+        order: "Order"
+        total: "Total"
   carts:
     show:
       cart: "Your cart"
@@ -235,6 +249,8 @@ en:
       email: "Email: "
       phone: "Phone: "
       address: "Address: "
+      notfind: "Can not find"
+      notfind: "find"
   raiting:
     not_ratings: "You voted for the product"
     success_raiting: "Vote successful"
