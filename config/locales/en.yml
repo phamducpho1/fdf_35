@@ -236,6 +236,7 @@ en:
     address: "address"
     phone: "phone"
     order_to: "Go to order"
+    fad: "Food and Drink"
   suggest:
     title: "Create Suggest"
     submit: "Submit"
@@ -254,3 +255,7 @@ en:
   raiting:
     not_ratings: "You voted for the product"
     success_raiting: "Vote successful"
+  mailer:
+    hi: "Hi "
+    thank: " Thanks for used my service"
+    status: "Your order is handling. It will be delivered for the next few day."

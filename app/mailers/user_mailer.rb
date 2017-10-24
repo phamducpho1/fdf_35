@@ -6,4 +6,10 @@ class UserMailer < ApplicationMailer
     emails = @mail.collect(&:email).join(",")
     mail to: emails, subject: t("mail_oder")
   end
+
+  def mailer_status  order
+    @order = order
+    @user = @order.user
+    mail to: @order.user.email, subject: t("user_mailer.fad")
+  end
 end

@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :suggests, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :ratings, dependent: :destroy
+  enum admin: {normal: 0, admin: 1}
   validates :name, presence: true, length: {maximum: Settings.user.name.maximum_length}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: Settings.user.email.maximum_length},
