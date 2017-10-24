@@ -1,6 +1,7 @@
 class Admin::ProductsController < ApplicationController
   before_action :admin_user, only: :destroy
   before_action :load_product, only: %i(destroy edit update)
+  before_action :check_if_has_line_item, only: :destroy
 
   def show; end
 
@@ -48,6 +49,12 @@ class Admin::ProductsController < ApplicationController
   end
 
   private
+
+  def check_if_has_line_item
+    return if @product.order_details.empty?
+    flash[:danger] = t "admin.notdelete"
+    redirect_to admin_products_path
+  end
 
   def product_params
     params.require(:product).permit(:name, :price, :quanlity, :image, :information, :category_id)
