@@ -8,4 +8,9 @@ class UserMailerPreview < ActionMailer::Preview
     order = Order.last
     UserMailer.mailer_status order
   end
+
+  def mailer_suggest
+    suggest = Suggest.last
+    UserMailer.mailer_suggest suggest
+  end
 end

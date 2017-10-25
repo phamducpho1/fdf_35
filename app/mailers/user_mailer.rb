@@ -7,9 +7,15 @@ class UserMailer < ApplicationMailer
     mail to: emails, subject: t("mail_oder")
   end
 
-  def mailer_status  order
+  def mailer_status order
     @order = order
     @user = @order.user
     mail to: @order.user.email, subject: t("user_mailer.fad")
+  end
+
+  def mailer_suggest suggest
+    @suggest = suggest
+    @user = @suggest.user
+    mail to: @suggest.user.email, subject: t("mailer.suggest")
   end
 end

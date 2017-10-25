@@ -10,6 +10,7 @@ class Admin::SuggestsController < ApplicationController
 
   def destroy
     if @suggest.destroy
+      UserMailer.mailer_suggest(@suggest).deliver_now
       flash[:success] = t "admin.deleted"
     else
       flash[:warning] = t "admin.notdelete"
