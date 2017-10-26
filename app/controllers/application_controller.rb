@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  helper_method [:recent_products, :last_viewed_product]
   protect_from_forgery with: :exception
   include SessionsHelper
 
@@ -18,5 +19,13 @@ class ApplicationController < ActionController::Base
     store_location
     flash[:danger] = t "ple_login"
     redirect_to login_url
+  end
+
+  def recent_products
+    @recent_products ||= RecentProducts.new cookies
+  end
+
+  def last_viewed_product
+    recent_products.reverse.second
   end
 end
