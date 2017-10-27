@@ -128,6 +128,7 @@ en:
       comment: "New comments"
       rating: "Rating breakdown"
       status: "Status: unavailabe"
+      recently: "Recently Viewed"
   admin:
       id: "ID"
       name: "Name"
@@ -203,6 +204,10 @@ en:
         year: "Year"
         order: "Order"
         total: "Total"
+        result: " Order | "
+        dola: "$"
+        from: "From:"
+        to: "To:"
   carts:
     show:
       cart: "Your cart"
@@ -251,7 +256,7 @@ en:
       phone: "Phone: "
       address: "Address: "
       notfind: "Can not find"
-      notfind: "find"
+      find: "Find"
   raiting:
     not_ratings: "You voted for the product"
     success_raiting: "Vote successful"

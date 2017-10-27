@@ -14,4 +14,7 @@ class Product < ApplicationRecord
   scope :find_category, ->(q){where category_id: q if q.present?}
   scope :search_by_name, ->(content){where(" name like ?", "%#{content}%") if content.present?}
   scope :search_price, ->(prices){where(price: prices) if prices.present?}
+  scope :product_hot, ->{joins(:order_details)
+    .where("MONTH(order_details.created_at) = ?", Date.today.month)
+    .group("products.id").order("sum(order_details.quanlity) DESC")   }
 end

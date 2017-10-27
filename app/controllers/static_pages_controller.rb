@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
     @products = Product.search_by_name(params[:search]).search_price(load_params)
       .sort_by_product.paginate(page: params[:page], per_page: Settings.per_page.config)
     @categories = Category.sort_by_category
+    @runouts = Product.product_hot
   end
 
   def show

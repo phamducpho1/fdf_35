@@ -6,11 +6,12 @@ class Admin::SuggestsController < ApplicationController
       per_page: Settings.suggest.per_page)
   end
 
-  def show; end
+  def show
+    UserMailer.mailer_suggest(@suggest).deliver_now
+  end
 
   def destroy
     if @suggest.destroy
-      UserMailer.mailer_suggest(@suggest).deliver_now
       flash[:success] = t "admin.deleted"
     else
       flash[:warning] = t "admin.notdelete"
