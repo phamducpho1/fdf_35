@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def edit; end
 
-  def updates
+  def update
     if @user.update_attributes(user_params)
       flash[:success] = t "admin.deleted"
     else
