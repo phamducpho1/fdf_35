@@ -58,11 +58,6 @@ text-decoration:none;
 color:#000
 }
 
-img {
-border:none;
-max-width:100%
-}
-
 textarea:focus,input:focus,select:focus,a:focus {
 outline:none
 }
@@ -213,11 +208,6 @@ font-weight:700
 -webkit-box-sizing:border-box;
 -moz-box-sizing:border-box;
 box-sizing:border-box
-}
-
-img.i100 {
-width:100%;
-height:auto
 }
 
 .animate {
@@ -1602,7 +1592,6 @@ margin-right:20px
 
 .beta-sales-item img {
 width:55px;
-height:auto
 }
 
 .beta-sales-price {
@@ -4651,7 +4640,6 @@ html{overflow-x:hidden;}
 .auto-width-left ul li a{padding:0px;}
 .auto-width-right{width:41%;}
 .auto-width-right ul li a{padding:0px 4px;}
-.pull-left.auto-width:{width:auto!important;}
 .beta-comp from{width:70%!important;}
 a#logo img{max-width:45%!important;}
 .beta-rotator canvas{width:98%!important;}
