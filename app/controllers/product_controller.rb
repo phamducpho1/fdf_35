@@ -6,7 +6,7 @@ class ProductController < ApplicationController
       @related_products = Product.not_original(params[:id]).sort_by_product.take(Settings.related_product.config)
       @new_products = Product.sort_by_product.take(Settings.new_product.config)
       recent_products.push @product
-      recent_products
+      @recent_products
     else
       flash[:warning] = t "static_pages_controller.errors"
       redirect_to root_url

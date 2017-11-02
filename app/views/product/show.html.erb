@@ -165,7 +165,7 @@
             <h3 class="widget-title"><%=t"product.show.recently"%></h3>
             <div class="widget-body">
               <div class="beta-sales beta-lists">
-                <% recent_products.each do |newproduct| %>
+                <% @recent_products.each do |newproduct| %>
                   <div class="media beta-sales-item">
                     <%= link_to(newproduct, class: "pull-left") do %>
                       <%= image_tag(newproduct.image) %>
