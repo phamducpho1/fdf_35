@@ -3,4 +3,6 @@
   <td><%= orderdetail.product.name %></td>
   <td><%= image_tag(orderdetail.product.image, size: Settings.image.admin) %></td>
   <td><%= orderdetail.quanlity %></td>
+  <td><%= orderdetail.quanlity * orderdetail.product.price %></td>
 </tr>
+

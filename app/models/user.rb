@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :trackable, :validatable
   has_many :suggests, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :ratings, dependent: :destroy
@@ -9,12 +10,10 @@ class User < ApplicationRecord
   validates :email, presence: true, length: {maximum: Settings.user.email.maximum_length},
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
-  has_secure_password
   validates :password, presence: true, length: {minimum: Settings.user.password.minimum_length},
     allow_nil: true
   scope :sort_by_name, ->{order :name}
   scope :send_mail, ->{where(admin: Settings.admin.value)}
-
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost

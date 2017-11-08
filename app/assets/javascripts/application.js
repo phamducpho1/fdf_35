@@ -19,4 +19,3 @@
 //= require date
 //= require_tree .
 //= require bootstrap-datepicker
-

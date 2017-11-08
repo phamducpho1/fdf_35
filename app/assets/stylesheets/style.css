@@ -58,6 +58,12 @@ text-decoration:none;
 color:#000
 }
 
+
+img {
+border:none;
+max-width:100%
+}
+
 textarea:focus,input:focus,select:focus,a:focus {
 outline:none
 }
@@ -209,7 +215,6 @@ font-weight:700
 -moz-box-sizing:border-box;
 box-sizing:border-box
 }
-
 .animate {
 -webkit-transition:all .3s ease-in-out;
 -moz-transition:all .3s ease-in-out;

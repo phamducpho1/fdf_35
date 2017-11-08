@@ -9,5 +9,5 @@ class Order < ApplicationRecord
   scope :count_month, ->{order("MONTH(created_at)").group("MONTH(created_at)")}
   scope :count_year, ->{order("YEAR(created_at)").group("YEAR(created_at)")}
   scope :find_order, ->(id){where user_id: id}
-  scope :created_in_time, ->(start_time, end_time){where(created_at: start_time..end_time+1)}
+  scope :created_in_time, ->(start_time, end_time){where(created_at: start_time..end_time + 1)}
 end
